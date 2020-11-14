@@ -5,18 +5,6 @@ import 'package:new_flutter_app/ui/views/CustomButton.dart';
 class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        theme: ThemeData(
-            primarySwatch: Colors.orange,
-            visualDensity: VisualDensity.adaptivePlatformDensity,
-            fontFamily: 'Brandon'),
-        home: AuthPage());
-  }
-}
-
-class AuthPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
     return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,

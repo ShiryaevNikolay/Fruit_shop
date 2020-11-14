@@ -9,19 +9,6 @@ class SplashScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: ThemeData(
-          primarySwatch: Colors.orange,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-          fontFamily: 'Brandon'),
-      home: SplashPage()
-    );
-  }
-}
-
-class SplashPage extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
     // Запускаем HomeScreen
     Timer(Duration(milliseconds: 300), () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => WelcomeScreen())));
     
