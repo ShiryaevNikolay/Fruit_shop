@@ -5,8 +5,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_flutter_app/ui/screens/welcomeScreen.dart';
 
-import 'homeScreen.dart';
-
 class SplashScreen extends StatelessWidget {
 
   @override

@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:new_flutter_app/ui/screens/authScreen.dart';
+import 'package:new_flutter_app/ui/views/CustomButton.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override
@@ -47,16 +48,8 @@ class WelcomePage extends StatelessWidget {
                 SizedBox(height: 8),
                 Text("We deliver the best and freshest fruit salad in\ntown. Order for a combo today!!!"),
                 SizedBox(height: 58),
-                MaterialButton(
-                  padding: EdgeInsets.symmetric(vertical: 14),
-                  color: Color(int.parse("0xFFFFA451")),
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text(
-                    "Let's Continue",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
-                  ),
+                CustomButton(
+                  "Let's Continue",
                   onPressed: () {
                     Navigator.pushReplacement(
                         context,
