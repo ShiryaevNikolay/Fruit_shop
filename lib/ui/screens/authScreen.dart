@@ -1,8 +1,17 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:new_flutter_app/ui/screens/homeScreen.dart';
 import 'package:new_flutter_app/ui/views/CustomButton.dart';
+import 'package:new_flutter_app/ui/views/customTextField.dart';
 
-class AuthScreen extends StatelessWidget {
+class AuthScreen extends StatefulWidget {
+  @override
+  _AuthScreenState createState() => _AuthScreenState();
+}
+
+class _AuthScreenState extends State<AuthScreen> {
+  String textField;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,21 +42,20 @@ class AuthScreen extends StatelessWidget {
                       color: Color(int.parse("0xFF27214D"))),
                 ),
                 SizedBox(height: 16),
-                TextField(
-                  cursorColor: Colors.orange,
-                  decoration: InputDecoration(
-                    hintText: "Tony",
-                    filled: true,
-                    fillColor: Color(int.parse("0xFFF3F2F1")),
-                    border: OutlineInputBorder(
-                        borderSide: BorderSide.none,
-                        borderRadius: BorderRadius.circular(10)),
-                  ),
-                ),
+                CustomTextFiled("Tony", onChanched: (value) {
+                  setState(() {
+                    textField = value;
+                  });
+                }),
                 SizedBox(height: 42),
                 CustomButton(
                   "Start Ordering",
-                  onPressed: () {},
+                  onPressed: () {
+                    if(textField.isNotEmpty) {
+                      Navigator.pushReplacement(context,
+                          MaterialPageRoute(builder: (context) => HomeScreen(textField)));
+                    }
+                  },
                 )
               ],
             ),
