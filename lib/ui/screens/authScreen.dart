@@ -1,8 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:new_flutter_app/ui/screens/authScreen.dart';
+import 'package:new_flutter_app/ui/views/CustomButton.dart';
 
-class WelcomeScreen extends StatelessWidget {
+class AuthScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -10,11 +10,11 @@ class WelcomeScreen extends StatelessWidget {
             primarySwatch: Colors.orange,
             visualDensity: VisualDensity.adaptivePlatformDensity,
             fontFamily: 'Brandon'),
-        home: WelcomePage());
+        home: AuthPage());
   }
 }
 
-class WelcomePage extends StatelessWidget {
+class AuthPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,9 +26,9 @@ class WelcomePage extends StatelessWidget {
                 padding: EdgeInsets.all(35),
                 color: Color(int.parse("0xFFFFA451")),
                 child: Image.asset(
-                  "assets/images/welcome_im.png",
-                  width: 303,
-                  height: 304,
+                  "assets/images/auth_im.png",
+                  width: 307,
+                  height: 307,
                 )),
           ),
           Padding(
@@ -37,38 +37,35 @@ class WelcomePage extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.stretch,
               children: [
                 Text(
-                  "Get The Freshest Fruit Salad Combo",
+                  "What is your firstname?",
                   style: TextStyle(
                       letterSpacing: -0.01,
                       fontSize: 20,
                       fontWeight: FontWeight.w500,
                       color: Color(int.parse("0xFF27214D"))),
                 ),
-                SizedBox(height: 8),
-                Text("We deliver the best and freshest fruit salad in\ntown. Order for a combo today!!!"),
-                SizedBox(height: 58),
-                MaterialButton(
-                  padding: EdgeInsets.symmetric(vertical: 14),
-                  color: Color(int.parse("0xFFFFA451")),
-                  elevation: 0,
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  child: Text(
-                    "Let's Continue",
-                    style: TextStyle(color: Colors.white, fontSize: 16),
+                SizedBox(height: 16),
+                TextField(
+                  cursorColor: Colors.orange,
+                  decoration: InputDecoration(
+                    hintText: "Tony",
+                    filled: true,
+                    fillColor: Color(int.parse("0xFFF3F2F1")),
+                    border: OutlineInputBorder(
+                        borderSide: BorderSide.none,
+                        borderRadius: BorderRadius.circular(10)),
                   ),
-                  onPressed: () {
-                    Navigator.pushReplacement(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => AuthScreen()));
-                  }
+                ),
+                SizedBox(height: 42),
+                CustomButton(
+                  "Start Ordering",
+                  onPressed: () {},
                 )
               ],
             ),
           )
         ],
-      )
+      ),
     );
   }
 }
