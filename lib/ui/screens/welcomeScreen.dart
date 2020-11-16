@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:new_flutter_app/ui/screens/authScreen.dart';
-import 'package:new_flutter_app/ui/views/CustomButton.dart';
+import 'package:new_flutter_app/ui/views/customTextButton.dart';
 
 class WelcomeScreen extends StatelessWidget {
   @override

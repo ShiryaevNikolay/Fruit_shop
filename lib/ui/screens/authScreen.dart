@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:new_flutter_app/ui/screens/homeScreen.dart';
-import 'package:new_flutter_app/ui/views/CustomButton.dart';
+import 'package:new_flutter_app/ui/views/customTextButton.dart';
 import 'package:new_flutter_app/ui/views/customTextField.dart';
 
 class AuthScreen extends StatefulWidget {
@@ -51,9 +51,11 @@ class _AuthScreenState extends State<AuthScreen> {
                 CustomButton(
                   "Start Ordering",
                   onPressed: () {
-                    if(textField.isNotEmpty) {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => HomeScreen(textField)));
+                    if (textField != null && textField.isNotEmpty) {
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => HomeScreen(textField)));
                     }
                   },
                 )

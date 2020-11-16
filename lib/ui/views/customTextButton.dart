@@ -1,17 +1,11 @@
 import 'package:flutter/material.dart';
 
-// ignore: must_be_immutable
-class CustomButton extends StatefulWidget {
-  String textButton;
+class CustomButton extends StatelessWidget {
+  final String textButton;
   final GestureTapCallback onPressed;
 
   CustomButton(this.textButton, {@required this.onPressed});
 
-  @override
-  _CustomButtonState createState() => _CustomButtonState();
-}
-
-class _CustomButtonState extends State<CustomButton> {
   @override
   Widget build(BuildContext context) {
     return MaterialButton(
@@ -20,9 +14,9 @@ class _CustomButtonState extends State<CustomButton> {
         elevation: 0,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
         child: Text(
-          widget.textButton,
+          textButton,
           style: TextStyle(color: Colors.white, fontSize: 16),
         ),
-        onPressed: widget.onPressed);
+        onPressed: onPressed);
   }
 }
