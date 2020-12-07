@@ -1,4 +1,4 @@
-# new_flutter_app
+# Fruit shop
 
 A new Flutter project.
 
